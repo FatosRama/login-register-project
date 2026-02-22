@@ -92,7 +92,7 @@ body{
 
 .registration-container{
     margin:0 auto;
-    width: 900px;
+    width: 400px;
     padding-top: 100px;
 }
 .registration-form{
@@ -103,11 +103,16 @@ body{
     gap:20px;
 }
 .registration-field{
+    width:100%;
     display:flex;
     flex-direction: column;
     gap:20px;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
+}
+.registration-title{
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 
