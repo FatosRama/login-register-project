@@ -1,23 +1,73 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
+# ────────────────────────────────────────────────
+# Node.js / npm / pnpm / yarn (both frontend & backend)
+# ────────────────────────────────────────────────
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-store/
+.pnpm-debug.log*
+
+# Environment variables & secrets (VERY IMPORTANT!)
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env*.local
+
+# Build / dist folders
+dist/
+build/
+out/
+
+# Vite (common in modern React projects)
+.vite/
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# React / Vite dev tools & caches
+.eslintcache
+.prettierrc.cache
+.stylelintcache
+
+# Logs & temporary files
+*.log
+logs/
+tmp/
+temp/
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Testing & coverage
+coverage/
+.nyc_output/
+
+# Optional: if you use Docker locally
+docker-compose.override.yml
+*.dockerignore
+
+# Database dumps / local backups (if you create any)
+*.sql.bak
+*.dump
+pgdata/
+
+# ────────────────────────────────────────────────
+# Optional extras (add if you use these tools)
+# ────────────────────────────────────────────────
+# Prisma (if you switch to it later)
+prisma/dev.db
+prisma/dev.db-journal
+
+# Playwright / Cypress tests
+test-results/
+playwright-report/
+blob-report/
