@@ -21,6 +21,28 @@ app.post('/register', async (req, res) => {
   }
 });
 
+app.get('/login', async (req, res) => {
+  const {email, password} = req.query;
+  try{
+    const result = await pool.query(
+      'SELECT * FROM registered_user WHERE email = $1 AND password = $2',
+      [email, password]
+    )
+    if(result.rows.length > 0){
+      res.status(200).json({message: 'Login successful', user: result.rows[0]});
+    }else{
+      res.status(401).json({message: 'Invalid email or password'});
+    }
+  }catch(err){
+    console.error(err);
+    res.status(500).json({error: err.message || 'Database error'});
+  }
+})
+
+
+
+
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

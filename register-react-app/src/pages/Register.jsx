@@ -2,8 +2,10 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Register(){
+    const navigate = useNavigate();
     return(
         <div className="flex h-screen bg-white-500">
             <div className="w-1/3 h-full bg-blue-500">
@@ -66,6 +68,8 @@ export default function Register(){
                         
                         alert('Success: ' + response.data.message);
                         resetForm();
+                        navigate('/login');
+                        
                         } catch (error) {
                             console.error('Registration error:', error);
 
