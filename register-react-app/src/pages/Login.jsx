@@ -1,9 +1,12 @@
 import {Formik, Field, ErrorMessage, Form} from 'formik';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function Login(){
+    const navigate = useNavigate();
+    
     return(
         
             <div className="w-full h-screen bg-blue-500 flex items-center justify-center">
@@ -33,6 +36,7 @@ export default function Login(){
                                     }
                                 });
                                 alert('Success: ' + response.data.message);
+                                navigate('/profile');
                                 resetForm();
                             }catch(error){
                                 console.error('Login error:', error);
